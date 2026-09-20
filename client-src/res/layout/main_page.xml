@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#11111b">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="120dp"
+        android:layout_height="fill_parent"
+        android:padding="8dp"
+        android:background="#181825">
+
+        <Button
+            android:id="@+id/btnFeed"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Feed"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:padding="8dp"/>
+
+        <Button
+            android:id="@+id/btnMyrepos"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Repos"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:padding="8dp"/>
+
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:padding="8dp"/>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listFeed"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:divider="#222230"
+        android:dividerHeight="1dp"
+        android:cacheColorHint="#00000000"/>
+
+</LinearLayout>

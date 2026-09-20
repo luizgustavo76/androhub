@@ -2,5 +2,13 @@
     {
         "merged": "com.androhub-merged_res-5:/layout_enter.xml.flat",
         "source": "com.androhub-client-src-6:/layout/enter.xml"
+    },
+    {
+        "merged": "com.androhub-merged_res-5:/drawable_lime_button.xml.flat",
+        "source": "com.androhub-client-src-6:/drawable/lime_button.xml"
+    },
+    {
+        "merged": "com.androhub-merged_res-5:/layout_main_page.xml.flat",
+        "source": "com.androhub-client-src-6:/layout/main_page.xml"
     }
 ]

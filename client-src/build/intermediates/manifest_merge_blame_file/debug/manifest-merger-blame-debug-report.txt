@@ -14,40 +14,45 @@
 11-->/home/luiz/androhub/client-src/AndroidManifest.xml:7:5-67
 11-->/home/luiz/androhub/client-src/AndroidManifest.xml:7:22-64
 12
-13    <!-- ESTA TAG RESOLVE O PROBLEMA DO TAMANHO DA TELA -->
-14    <supports-screens
-14-->/home/luiz/androhub/client-src/AndroidManifest.xml:10:5-14:37
-15        android:anyDensity="true"
-15-->/home/luiz/androhub/client-src/AndroidManifest.xml:14:9-34
-16        android:largeScreens="true"
-16-->/home/luiz/androhub/client-src/AndroidManifest.xml:13:9-36
-17        android:normalScreens="true"
-17-->/home/luiz/androhub/client-src/AndroidManifest.xml:12:9-37
-18        android:smallScreens="true" />
-18-->/home/luiz/androhub/client-src/AndroidManifest.xml:11:9-36
-19
-20    <application
-20-->/home/luiz/androhub/client-src/AndroidManifest.xml:16:5-24:19
-21        android:debuggable="true"
-22        android:label="AndroHub" >
-22-->/home/luiz/androhub/client-src/AndroidManifest.xml:16:18-42
-23        <activity
-23-->/home/luiz/androhub/client-src/AndroidManifest.xml:17:9-23:20
-24            android:name="com.androhub.MainActivity"
-24-->/home/luiz/androhub/client-src/AndroidManifest.xml:17:19-47
-25            android:label="AndroHub" >
-25-->/home/luiz/androhub/client-src/AndroidManifest.xml:18:19-43
-26            <intent-filter>
-26-->/home/luiz/androhub/client-src/AndroidManifest.xml:19:13-22:29
-27                <action android:name="android.intent.action.MAIN" />
-27-->/home/luiz/androhub/client-src/AndroidManifest.xml:20:17-69
-27-->/home/luiz/androhub/client-src/AndroidManifest.xml:20:25-66
-28
-29                <category android:name="android.intent.category.LAUNCHER" />
-29-->/home/luiz/androhub/client-src/AndroidManifest.xml:21:17-77
-29-->/home/luiz/androhub/client-src/AndroidManifest.xml:21:27-74
-30            </intent-filter>
-31        </activity>
-32    </application>
-33
-34</manifest>
+13    <supports-screens
+13-->/home/luiz/androhub/client-src/AndroidManifest.xml:9:5-13:37
+14        android:anyDensity="true"
+14-->/home/luiz/androhub/client-src/AndroidManifest.xml:13:9-34
+15        android:largeScreens="true"
+15-->/home/luiz/androhub/client-src/AndroidManifest.xml:12:9-36
+16        android:normalScreens="true"
+16-->/home/luiz/androhub/client-src/AndroidManifest.xml:11:9-37
+17        android:smallScreens="true" />
+17-->/home/luiz/androhub/client-src/AndroidManifest.xml:10:9-36
+18
+19    <application
+19-->/home/luiz/androhub/client-src/AndroidManifest.xml:15:5-29:19
+20        android:debuggable="true"
+21        android:label="AndroHub" >
+21-->/home/luiz/androhub/client-src/AndroidManifest.xml:15:18-42
+22        <activity
+22-->/home/luiz/androhub/client-src/AndroidManifest.xml:17:9-24:20
+23            android:name="com.androhub.MainActivity"
+23-->/home/luiz/androhub/client-src/AndroidManifest.xml:18:13-41
+24            android:label="AndroHub" >
+24-->/home/luiz/androhub/client-src/AndroidManifest.xml:19:13-37
+25            <intent-filter>
+25-->/home/luiz/androhub/client-src/AndroidManifest.xml:20:13-23:29
+26                <action android:name="android.intent.action.MAIN" />
+26-->/home/luiz/androhub/client-src/AndroidManifest.xml:21:17-69
+26-->/home/luiz/androhub/client-src/AndroidManifest.xml:21:25-66
+27
+28                <category android:name="android.intent.category.LAUNCHER" />
+28-->/home/luiz/androhub/client-src/AndroidManifest.xml:22:17-77
+28-->/home/luiz/androhub/client-src/AndroidManifest.xml:22:27-74
+29            </intent-filter>
+30        </activity>
+31        <activity
+31-->/home/luiz/androhub/client-src/AndroidManifest.xml:25:9-27:36
+32            android:name="com.androhub.MainPage"
+32-->/home/luiz/androhub/client-src/AndroidManifest.xml:26:13-37
+33            android:label="Home" />
+33-->/home/luiz/androhub/client-src/AndroidManifest.xml:27:13-33
+34    </application>
+35
+36</manifest>

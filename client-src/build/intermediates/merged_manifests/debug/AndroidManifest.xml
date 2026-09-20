@@ -10,7 +10,6 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <!-- ESTA TAG RESOLVE O PROBLEMA DO TAMANHO DA TELA -->
     <supports-screens
         android:anyDensity="true"
         android:largeScreens="true"
@@ -29,6 +28,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.androhub.MainPage"
+            android:label="Home" />
     </application>
 
 </manifest>

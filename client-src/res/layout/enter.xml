@@ -12,4 +12,14 @@
         android:layout_width="fill_parent" 
         android:layout_height="wrap_content" 
         android:hint="type here your github username"/>
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Go to main page"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:background="@drawable/lime_button"
+        android:padding="12dp" />
 </LinearLayout>

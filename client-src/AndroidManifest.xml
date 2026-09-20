@@ -6,7 +6,6 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <!-- ESTA TAG RESOLVE O PROBLEMA DO TAMANHO DA TELA -->
     <supports-screens 
         android:smallScreens="true"
         android:normalScreens="true"
@@ -14,12 +13,19 @@
         android:anyDensity="true" />
 
     <application android:label="AndroHub">
-        <activity android:name=".MainActivity"
-                  android:label="AndroHub">
+
+        <activity 
+            android:name=".MainActivity"
+            android:label="AndroHub">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+        </activity> 
+        <activity 
+            android:name=".MainPage"
+            android:label="Home" />
+
     </application>
+
 </manifest>
