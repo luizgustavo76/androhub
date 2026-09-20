@@ -3,15 +3,31 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
+
     <TextView
         android:layout_width="fill_parent" 
         android:layout_height="wrap_content" 
         android:text="welcome to androHub. a lightweight client of github made from scratch!"/>
+
     <EditText
         android:id="@+id/edtUsername"
         android:layout_width="fill_parent" 
         android:layout_height="wrap_content" 
         android:hint="type here your github username"/>
+
+    <EditText
+        android:id="@+id/edtToken"
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content" 
+        android:hint="type here your github personal token"/>
+
+    <TextView
+        android:id="@+id/txtTokenInfo"
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content"
+        android:text="Don't worry; it's only used to increase the hourly request limit. If you're still unsure, our source code is open: http://github.com/luizgustavo76/androhub"
+        android:autoLink="web"/>
+
     <Button
         android:id="@+id/btnSend"
         android:layout_width="fill_parent"

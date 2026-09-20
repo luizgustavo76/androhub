@@ -73,7 +73,11 @@
                 android:paddingLeft="4dip"
                 android:text="Repo Name"/>
         </LinearLayout>
-
+        <TextView
+                android:id="@+id/txtDescription"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content"
+                android:text="Description"/>
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
