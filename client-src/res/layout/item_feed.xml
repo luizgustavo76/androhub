@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dip"
+    android:background="#0d1117">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/feedAvatar"
+            android:layout_width="28dip"
+            android:layout_height="28dip"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/txtUser"
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:paddingLeft="6dip"
+            android:text="Username"/>
+
+        <TextView
+            android:id="@+id/txtAction"
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content"
+            android:textColor="#8b949e"
+            android:paddingLeft="4dip"
+            android:text="Action"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtTime"
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content"
+        android:textColor="#484f58"
+        android:paddingTop="2dip"
+        android:text="Time ago"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dip"
+        android:padding="8dip"
+        android:background="#151b23">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/repoIcon"
+                android:layout_width="14dip"
+                android:layout_height="14dip"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:id="@+id/txtRepoName"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="#58a6ff"
+                android:paddingLeft="4dip"
+                android:text="Repo Name"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dip">
+
+            <TextView
+                android:id="@+id/txtLang"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content"
+                android:textColor="#8b949e"
+                android:text="Lang"/>
+
+            <TextView
+                android:id="@+id/txtStars"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content"
+                android:textColor="#8b949e"
+                android:paddingLeft="12dip"
+                android:text="Stars"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

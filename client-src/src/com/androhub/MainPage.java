@@ -2,7 +2,6 @@ package com.androhub;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +22,7 @@ public class MainPage extends Activity {
         username = getIntent().getStringExtra("username");
         listFeed = (ListView) findViewById(R.id.listFeed);
         
-        List<String> itensFeed = new ArrayList<String>();
+        List<FeedItem> itensFeed = new ArrayList<FeedItem>();
 
         try {
             String jsonResposta = request.requestHTTP("https://api.github.com/users/" + username + "/received_events/public", "get", new JSONObject());
@@ -33,31 +32,45 @@ public class MainPage extends Activity {
                 JSONObject item = jsonArray.getJSONObject(i);
                 
                 String type = item.getString("type");
-                String actorLogin = item.getJSONObject("actor").getString("login");
+                JSONObject actor = item.getJSONObject("actor");
+                String actorLogin = actor.getString("login");
+                String avatarUrl = actor.has("avatar_url") ? actor.getString("avatar_url") : "";
+                
                 String repoName = item.getJSONObject("repo").getString("name");
+                String createdAt = item.has("created_at") ? item.getString("created_at") : "";
+
+                String actionText = "";
 
                 if (type.equals("PushEvent")) {
-                    itensFeed.add(actorLogin + " pushed to " + repoName);
+                    actionText = "pushed to";
                 } else if (type.equals("WatchEvent")) {
-                    itensFeed.add(actorLogin + " starred " + repoName);
+                    actionText = "starred";
                 } else if (type.equals("ReleaseEvent")) {
-                    itensFeed.add(actorLogin + " published a press release on " + repoName);
+                    actionText = "published a release on";
                 } else if (type.equals("IssueCommentEvent")) {
-                    itensFeed.add(actorLogin + " commented on an issue in " + repoName);
+                    actionText = "commented on an issue in";
                 } else {
-                    itensFeed.add(actorLogin + " carried out the action " + type + " em " + repoName);
+                    actionText = "action " + type + " in";
                 }
+
+                FeedItem feedItem = new FeedItem(
+                    actorLogin,
+                    actionText,
+                    createdAt, 
+                    repoName,
+                    "Java",
+                    "★ 0",
+                    avatarUrl
+                );
+
+                itensFeed.add(feedItem);
             }
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-            this,
-            android.R.layout.simple_list_item_1, 
-            itensFeed
-        );
+        FeedAdapter adapter = new FeedAdapter(this, itensFeed);
         listFeed.setAdapter(adapter);
     }
 }
