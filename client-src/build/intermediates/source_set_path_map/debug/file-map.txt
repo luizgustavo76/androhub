@@ -1,0 +1,8 @@
+com.androhub-pngs-0 /home/luiz/androhub/client-src/build/generated/res/pngs/debug
+com.androhub-resValues-1 /home/luiz/androhub/client-src/build/generated/res/resValues/debug
+com.androhub-rs-2 /home/luiz/androhub/client-src/build/generated/res/rs/debug
+com.androhub-mergeDebugResources-3 /home/luiz/androhub/client-src/build/intermediates/incremental/debug/mergeDebugResources/merged.dir
+com.androhub-mergeDebugResources-4 /home/luiz/androhub/client-src/build/intermediates/incremental/debug/mergeDebugResources/stripped.dir
+com.androhub-merged_res-5 /home/luiz/androhub/client-src/build/intermediates/merged_res/debug
+com.androhub-client-src-6 /home/luiz/androhub/client-src/res
+com.androhub-debug-7 /home/luiz/androhub/client-src/src/debug/res

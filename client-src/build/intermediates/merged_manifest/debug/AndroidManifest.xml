@@ -2,24 +2,33 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.androhub"
     android:versionCode="1"
-    android:versionName="1.0">
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="3"
+        android:targetSdkVersion="3" />
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <!-- ESTA TAG RESOLVE O PROBLEMA DO TAMANHO DA TELA -->
-    <supports-screens 
-        android:smallScreens="true"
-        android:normalScreens="true"
+    <supports-screens
+        android:anyDensity="true"
         android:largeScreens="true"
-        android:anyDensity="true" />
+        android:normalScreens="true"
+        android:smallScreens="true" />
 
-    <application android:label="AndroHub">
-        <activity android:name=".MainActivity"
-                  android:label="AndroHub">
+    <application
+        android:debuggable="true"
+        android:label="AndroHub" >
+        <activity
+            android:name="com.androhub.MainActivity"
+            android:label="AndroHub" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

@@ -8,16 +8,23 @@ buildscript {
     }
 }
 
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 3
-    buildToolsVersion "21.1.2"
+    namespace 'com.androhub'
+    compileSdkVersion 4 // API 4 (Donut) para o AAPT2 compilar sem erros de manifesto
 
     defaultConfig {
         applicationId "com.androhub"
-        minSdkVersion 3
-        targetSdkVersion 3
+        minSdkVersion 3     // Android 1.5 (Cupcake)
+        targetSdkVersion 3  // Força o comportamento do Cupcake
         versionCode 1
         versionName "1.0"
     }

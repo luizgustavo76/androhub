@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.androhub-merged_res-5:/values_values.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/luiz/androhub/client-src/res/values/strings.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,101",
+                        "endColumns": "45,67",
+                        "endOffsets": "96,164"
+                    }
+                }
+            ]
+        }
+    ]
+}
