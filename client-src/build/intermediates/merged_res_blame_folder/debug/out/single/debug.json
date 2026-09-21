@@ -1,5 +1,9 @@
 [
     {
+        "merged": "com.androhub-merged_res-5:/layout_work_tree.xml.flat",
+        "source": "com.androhub-client-src-6:/layout/work_tree.xml"
+    },
+    {
         "merged": "/home/luiz/.gradle/daemon/7.5/com.androhub-merged_res-5:/layout_enter.xml.flat",
         "source": "/home/luiz/.gradle/daemon/7.5/com.androhub-client-src-6:/layout/enter.xml"
     },
@@ -16,7 +20,7 @@
         "source": "/home/luiz/.gradle/daemon/7.5/com.androhub-client-src-6:/drawable/lime_button.xml"
     },
     {
-        "merged": "com.androhub-merged_res-5:/layout_main_page.xml.flat",
-        "source": "com.androhub-client-src-6:/layout/main_page.xml"
+        "merged": "/home/luiz/.gradle/daemon/7.5/com.androhub-merged_res-5:/layout_work_tree.xml.flat",
+        "source": "/home/luiz/.gradle/daemon/7.5/com.androhub-client-src-6:/layout/work_tree.xml"
     }
 ]

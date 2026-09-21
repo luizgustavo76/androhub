@@ -26,7 +26,7 @@
 17-->/home/luiz/androhub/client-src/AndroidManifest.xml:10:9-36
 18
 19    <application
-19-->/home/luiz/androhub/client-src/AndroidManifest.xml:15:5-31:19
+19-->/home/luiz/androhub/client-src/AndroidManifest.xml:15:5-34:19
 20        android:debuggable="true"
 21        android:label="AndroHub" >
 21-->/home/luiz/androhub/client-src/AndroidManifest.xml:15:18-42
@@ -59,6 +59,12 @@
 35-->/home/luiz/androhub/client-src/AndroidManifest.xml:29:13-42
 36            android:label="Repositorys" />
 36-->/home/luiz/androhub/client-src/AndroidManifest.xml:30:13-40
-37    </application>
-38
-39</manifest>
+37        <activity
+37-->/home/luiz/androhub/client-src/AndroidManifest.xml:31:9-33:41
+38            android:name="com.androhub.WorkTree"
+38-->/home/luiz/androhub/client-src/AndroidManifest.xml:32:13-37
+39            android:label="Work tree" />
+39-->/home/luiz/androhub/client-src/AndroidManifest.xml:33:13-38
+40    </application>
+41
+42</manifest>

@@ -7,32 +7,56 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.ListView;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import android.widget.Button;
 
 public class ReposActivity extends Activity {
-    private ListView listFeed;
+    private ListView listRepos;
     private String username = "";
     private String token = "";
     private Button btnFeed;
+    
+    private List<FeedItem> itemsRepo = new ArrayList<FeedItem>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_page);
+
         btnFeed = (Button) findViewById(R.id.btnFeed);
-        btnFeed.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Intent intent = new Intent(ReposActivity.this, MainPage.class);
-                intent.putExtra("username", username);
-                startActivity(intent);
-            }
-        });
-        listFeed = (ListView) findViewById(R.id.listFeed);
+        if (btnFeed != null) {
+            btnFeed.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    Intent intent = new Intent(ReposActivity.this, MainPage.class);
+                    intent.putExtra("username", username);
+                    startActivity(intent);
+                }
+            });
+        }
+
+        listRepos = (ListView) findViewById(R.id.listFeed); 
+        
+        if (listRepos != null) {
+            listRepos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    if (position < itemsRepo.size()) {
+                        FeedItem clickedRepo = itemsRepo.get(position);
+                        Intent intent = new Intent(ReposActivity.this, WorkTree.class);
+                        intent.putExtra("repo_name", clickedRepo.getRepoName()); 
+                        intent.putExtra("username", username);
+                        intent.putExtra("token", token);
+                        startActivity(intent);
+                    }
+                }
+            });
+        }
 
         username = getIntent().getStringExtra("username");
         if (username != null) {
@@ -65,11 +89,13 @@ public class ReposActivity extends Activity {
 
         @Override
         protected List<FeedItem> doInBackground(Void... params) {
-            List<FeedItem> itemsRepo = new ArrayList<FeedItem>();
+            List<FeedItem> fetchedItems = new ArrayList<FeedItem>();
 
             try {
                 String urlRepos = "https://api.github.com/users/" + username + "/repos";
+                
                 String jsonResponse = request.requestHTTP(urlRepos, "GET", null, token);
+                
                 if (jsonResponse != null && jsonResponse.startsWith("[")) {
                     JSONArray jsonArray = new JSONArray(jsonResponse);
                     for (int i = 0; i < jsonArray.length(); i++) {
@@ -89,15 +115,14 @@ public class ReposActivity extends Activity {
                             "",          
                             avatarUrl    
                         );
-
-                        itemsRepo.add(repoItem);
+                        fetchedItems.add(repoItem);
                     }
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
-            return itemsRepo;
+            return fetchedItems;
         }
 
         @Override
@@ -107,8 +132,15 @@ public class ReposActivity extends Activity {
                 dialog.dismiss();
             }
 
-            FeedAdapter adapter = new FeedAdapter(ReposActivity.this, result);
-            listFeed.setAdapter(adapter);
+            itemsRepo.clear();
+            if (result != null) {
+                itemsRepo.addAll(result);
+            }
+
+            FeedAdapter adapter = new FeedAdapter(ReposActivity.this, itemsRepo);
+            if (listRepos != null) {
+                listRepos.setAdapter(adapter);
+            }
         }
     }
 }

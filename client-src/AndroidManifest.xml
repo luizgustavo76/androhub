@@ -28,6 +28,9 @@
         <activity 
             android:name=".ReposActivity"
             android:label="Repositorys" />
+        <activity 
+            android:name=".WorkTree"
+            android:label="Work tree" />
     </application>
 
 </manifest>

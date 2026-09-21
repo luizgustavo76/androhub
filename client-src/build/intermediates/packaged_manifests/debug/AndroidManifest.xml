@@ -34,6 +34,9 @@
         <activity
             android:name="com.androhub.ReposActivity"
             android:label="Repositorys" />
+        <activity
+            android:name="com.androhub.WorkTree"
+            android:label="Work tree" />
     </application>
 
 </manifest>
