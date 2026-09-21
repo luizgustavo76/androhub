@@ -1,12 +1,12 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/luiz/androhub/client-src/AndroidManifest.xml:2:1-31:12
-INJECTED from /home/luiz/androhub/client-src/AndroidManifest.xml:2:1-31:12
-INJECTED from /home/luiz/androhub/client-src/AndroidManifest.xml:2:1-31:12
-INJECTED from /home/luiz/androhub/client-src/AndroidManifest.xml:2:1-31:12
-INJECTED from /home/luiz/androhub/client-src/AndroidManifest.xml:2:1-31:12
-INJECTED from /home/luiz/androhub/client-src/AndroidManifest.xml:2:1-31:12
-INJECTED from /home/luiz/androhub/client-src/AndroidManifest.xml:2:1-31:12
+ADDED from /home/luiz/androhub/client-src/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/luiz/androhub/client-src/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/luiz/androhub/client-src/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/luiz/androhub/client-src/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/luiz/androhub/client-src/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/luiz/androhub/client-src/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/luiz/androhub/client-src/AndroidManifest.xml:2:1-33:12
 	package
 		ADDED from /home/luiz/androhub/client-src/AndroidManifest.xml:3:5-27
 		INJECTED from /home/luiz/androhub/client-src/AndroidManifest.xml
@@ -36,7 +36,7 @@ ADDED from /home/luiz/androhub/client-src/AndroidManifest.xml:9:5-13:37
 	android:anyDensity
 		ADDED from /home/luiz/androhub/client-src/AndroidManifest.xml:13:9-34
 application
-ADDED from /home/luiz/androhub/client-src/AndroidManifest.xml:15:5-29:19
+ADDED from /home/luiz/androhub/client-src/AndroidManifest.xml:15:5-31:19
 	android:label
 		ADDED from /home/luiz/androhub/client-src/AndroidManifest.xml:15:18-42
 activity#com.androhub.MainActivity
@@ -61,6 +61,12 @@ ADDED from /home/luiz/androhub/client-src/AndroidManifest.xml:25:9-27:36
 		ADDED from /home/luiz/androhub/client-src/AndroidManifest.xml:27:13-33
 	android:name
 		ADDED from /home/luiz/androhub/client-src/AndroidManifest.xml:26:13-37
+activity#com.androhub.ReposActivity
+ADDED from /home/luiz/androhub/client-src/AndroidManifest.xml:28:9-30:43
+	android:label
+		ADDED from /home/luiz/androhub/client-src/AndroidManifest.xml:30:13-40
+	android:name
+		ADDED from /home/luiz/androhub/client-src/AndroidManifest.xml:29:13-42
 uses-sdk
 INJECTED from /home/luiz/androhub/client-src/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/luiz/androhub/client-src/AndroidManifest.xml

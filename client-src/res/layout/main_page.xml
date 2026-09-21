@@ -23,7 +23,7 @@
             android:padding="8dp"/>
 
         <Button
-            android:id="@+id/btnMyrepos"
+            android:id="@+id/btnRepo"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"

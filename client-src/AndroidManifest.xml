@@ -25,7 +25,9 @@
         <activity 
             android:name=".MainPage"
             android:label="Home" />
-
+        <activity 
+            android:name=".ReposActivity"
+            android:label="Repositorys" />
     </application>
 
 </manifest>

@@ -1,6 +1,6 @@
 int drawable lime_button 0x7f010000
 int id btnFeed 0x7f020000
-int id btnMyrepos 0x7f020001
+int id btnRepo 0x7f020001
 int id btnSearch 0x7f020002
 int id btnSend 0x7f020003
 int id edtToken 0x7f020004

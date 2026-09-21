@@ -1,27 +1,34 @@
 package com.androhub;
 
+import android.content.Intent;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.ListView;
+import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import android.widget.Button;
 
 public class MainPage extends Activity {
 
     private ListView listFeed;
     private String username = "";
     private String token = "";
+    private Button btnRepo;
+    private Button btnSearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_page);
-        
+
+        btnRepo = (Button) findViewById(R.id.btnRepo);
+        btnSearch = (Button) findViewById(R.id.btnSearch);
         listFeed = (ListView) findViewById(R.id.listFeed);
 
         username = getIntent().getStringExtra("username");
@@ -38,8 +45,21 @@ public class MainPage extends Activity {
             }
         }
 
-        // Executa a busca em background sem travar a interface
-        new FetchFeedTask().execute();
+        btnRepo.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(MainPage.this, ReposActivity.class);
+                intent.putExtra("username", username);
+                startActivity(intent);
+            }
+        });
+
+        if (FeedCache.isValid(username)) {
+            FeedAdapter adapter = new FeedAdapter(MainPage.this, FeedCache.cachedRepos);
+            listFeed.setAdapter(adapter);
+        } else {
+            new FetchFeedTask().execute();
+        }
     }
 
     private class FetchFeedTask extends AsyncTask<Void, Void, List<FeedItem>> {
@@ -147,7 +167,8 @@ public class MainPage extends Activity {
                 dialog.dismiss();
             }
 
-            // Atualiza a lista na UI Thread
+            FeedCache.save(username, result);
+
             FeedAdapter adapter = new FeedAdapter(MainPage.this, result);
             listFeed.setAdapter(adapter);
         }

@@ -31,6 +31,9 @@
         <activity
             android:name="com.androhub.MainPage"
             android:label="Home" />
+        <activity
+            android:name="com.androhub.ReposActivity"
+            android:label="Repositorys" />
     </application>
 
 </manifest>
