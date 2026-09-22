@@ -43,6 +43,9 @@
         <activity
             android:name="com.androhub.ViewReleases"
             android:label="View Releases" />
+        <activity
+            android:name="com.androhub.PullRequests"
+            android:label="Pull reuquests" />
     </application>
 
 </manifest>

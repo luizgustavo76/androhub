@@ -37,6 +37,9 @@
         <activity 
             android:name=".ViewReleases"
             android:label="View Releases" />
+        <activity 
+            android:name=".PullRequests"
+            android:label="Pull reuquests" />
     </application>
 
 </manifest>

@@ -26,7 +26,7 @@
 17-->/home/luiz/androhub/client-src/AndroidManifest.xml:10:9-36
 18
 19    <application
-19-->/home/luiz/androhub/client-src/AndroidManifest.xml:15:5-40:19
+19-->/home/luiz/androhub/client-src/AndroidManifest.xml:15:5-43:19
 20        android:debuggable="true"
 21        android:label="AndroHub" >
 21-->/home/luiz/androhub/client-src/AndroidManifest.xml:15:18-42
@@ -77,6 +77,12 @@
 44-->/home/luiz/androhub/client-src/AndroidManifest.xml:38:13-41
 45            android:label="View Releases" />
 45-->/home/luiz/androhub/client-src/AndroidManifest.xml:39:13-42
-46    </application>
-47
-48</manifest>
+46        <activity
+46-->/home/luiz/androhub/client-src/AndroidManifest.xml:40:9-42:46
+47            android:name="com.androhub.PullRequests"
+47-->/home/luiz/androhub/client-src/AndroidManifest.xml:41:13-41
+48            android:label="Pull reuquests" />
+48-->/home/luiz/androhub/client-src/AndroidManifest.xml:42:13-43
+49    </application>
+50
+51</manifest>

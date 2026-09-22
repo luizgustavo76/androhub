@@ -56,6 +56,15 @@ public class WorkTree extends Activity {
                 startActivity(intentReleases);
             }
         });
+        btnPr.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intentReleases = new Intent(WorkTree.this, PullRequests.class);
+                intentReleases.putExtra("RepoName", username + "/" + repoName);
+                intentReleases.putExtra("token", token);
+                startActivity(intentReleases);
+            }
+        });
         listView = (ListView) findViewById(R.id.listTree);
         TextView txtRepoName = (TextView) findViewById(R.id.txtRepoName);
 
