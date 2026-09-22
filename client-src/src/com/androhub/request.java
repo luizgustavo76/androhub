@@ -61,10 +61,7 @@ public class request {
                 }
                 in.close();
 
-                if (responseCode >= 400) {
-                    return ""; 
-                }
-
+                // Retorna o JSON da resposta SEMPRE (seja 200 OK ou 404/403/401)
                 return response.toString();
             }
 

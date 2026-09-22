@@ -6,7 +6,6 @@
     android:layout_height="fill_parent"
     android:background="#181825">
 
-    <!-- Barra Superior de Botões Dividida Igualitariamente -->
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="fill_parent"
@@ -38,7 +37,6 @@
             android:text="Copy"/>
     </LinearLayout>
 
-    <!-- Área do Código Ocupando o Restante da Tela -->
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -62,4 +60,4 @@
         </HorizontalScrollView>
     </ScrollView>
 
-</LinearLayout>
+</LinearLayout>1'

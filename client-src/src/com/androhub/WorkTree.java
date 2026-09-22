@@ -79,6 +79,11 @@ public class WorkTree extends Activity {
                 }
                 if ("file".equals(itemClicked.type)){
                     Intent intentFile = new Intent(WorkTree.this, ViewFile.class);
+                    intentFile.putExtra("RepoName", repoName);
+                    intentFile.putExtra("token", token);
+                    intentFile.putExtra("username", username);
+                    intentFile.putExtra("fileName", itemClicked.name);
+                    intentFile.putExtra("path", path);
                     startActivity(intentFile);
                 }
             }
