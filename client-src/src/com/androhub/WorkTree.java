@@ -3,14 +3,18 @@ package com.androhub;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -18,6 +22,10 @@ public class WorkTree extends Activity {
     private String username = "";
     private String repoName = "";
     private String token = "";
+    private String path = "";
+    private String url = "";
+    private ListView listView;
+    private List<RepoItem> itemList = new ArrayList<RepoItem>();
 
     public static class RepoItem {
         String name;
@@ -34,41 +42,81 @@ public class WorkTree extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.work_tree);
 
-        ListView listView = (ListView) findViewById(R.id.listTree);
+        listView = (ListView) findViewById(R.id.listTree);
         TextView txtRepoName = (TextView) findViewById(R.id.txtRepoName);
 
         Intent intent = getIntent();
-        username = intent.getStringExtra("username");
-        repoName = intent.getStringExtra("repo_name");
-        token = intent.getStringExtra("token");
+        if (intent != null) {
+            username = intent.getStringExtra("username") != null ? intent.getStringExtra("username") : "";
+            repoName = intent.getStringExtra("repo_name") != null ? intent.getStringExtra("repo_name") : "";
+            token = intent.getStringExtra("token") != null ? intent.getStringExtra("token") : "";
+            path = intent.getStringExtra("path") != null ? intent.getStringExtra("path") : "";
+        }
 
-        if (txtRepoName != null && username != null && repoName != null) {
+        if (!path.equals("")) {
+            url = "https://api.github.com/repos/" + username + "/" + repoName + "/contents/" + path;
+        } else {
+            url = "https://api.github.com/repos/" + username + "/" + repoName + "/contents";
+        }
+
+        if (txtRepoName != null && !username.equals("") && !repoName.equals("")) {
             txtRepoName.setText(username + " / " + repoName);
         }
 
-        List<RepoItem> itemList = new ArrayList<>();
-
-        if (username != null && !username.equals("") && repoName != null && !repoName.equals("")) {
-            try {
-                String responseText = request.requestHTTP("https://api.github.com/repos/" + username + "/" + repoName + "/contents", "get", new JSONObject(), token);
-                if (responseText != null && !responseText.equals("")) {
-                    JSONArray contentsArray = new JSONArray(responseText);
-
-                    for (int i = 0; i < contentsArray.length(); i++) {
-                        JSONObject repoObject = contentsArray.getJSONObject(i);
-                        String name = repoObject.optString("name", "");
-                        String type = repoObject.optString("type", "");
-
-                        itemList.add(new RepoItem(name, type));
-                    }
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                RepoItem itemClicked = (RepoItem) parent.getItemAtPosition(position);
+                
+                // Só navega recursivamente se for diretório
+                if ("dir".equals(itemClicked.type) || "tree".equals(itemClicked.type)) {
+                    String newPath = path.equals("") ? itemClicked.name : path + "/" + itemClicked.name;
+                    Intent intentTree = new Intent(WorkTree.this, WorkTree.class);
+                    intentTree.putExtra("username", username);
+                    intentTree.putExtra("repo_name", repoName);
+                    intentTree.putExtra("token", token);
+                    intentTree.putExtra("path", newPath);
+                    startActivity(intentTree);
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
             }
-        }
+        });
 
-        if (listView != null) {
-            listView.setAdapter(new RepoAdapter(itemList));
+        if (!username.equals("") && !repoName.equals("")) {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    fetchContents();
+                }
+            }).start();
+        }
+    }
+
+    private void fetchContents() {
+        try {
+            String responseText = request.requestHTTP(url, "get", new JSONObject(), token);
+            if (responseText != null && !responseText.equals("")) {
+                JSONArray contentsArray = new JSONArray(responseText);
+
+                itemList.clear();
+                for (int i = 0; i < contentsArray.length(); i++) {
+                    JSONObject repoObject = contentsArray.getJSONObject(i);
+                    String name = repoObject.optString("name", "");
+                    String type = repoObject.optString("type", "");
+
+                    itemList.add(new RepoItem(name, type));
+                }
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (listView != null) {
+                            listView.setAdapter(new RepoAdapter(itemList));
+                        }
+                    }
+                });
+            }
+        } catch (Exception e) {
+            Log.e("WorkTreeError", "Erro ao buscar dados da API: " + e.getMessage());
         }
     }
 

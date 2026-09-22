@@ -1,163 +1,217 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:padding="4dip"
     android:background="#0d1117">
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:padding="4dip"
-        android:background="#010409">
-
-        <Button
-            android:id="@+id/btnCode"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textColor="#000000"
-            android:textSize="11sp"
-            android:text="Code"/>
-
-        <Button
-            android:id="@+id/btnIssues"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textColor="#000000"
-            android:textSize="11sp"
-            android:text="Issues"/>
-
-        <Button
-            android:id="@+id/btnPR"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textColor="#000000"
-            android:textSize="11sp"
-            android:text="PRs"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:padding="6dip"
-        android:gravity="center_vertical"
-        android:background="#010409">
-
-        <ImageView
-            android:id="@+id/avatar"
-            android:layout_width="24dip"
-            android:layout_height="24dip"
-            android:scaleType="centerCrop"/>
-
-        <TextView
-            android:id="@+id/txtRepoName"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="6dip"
-            android:textColor="#58a6ff"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:text="user / repository"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:padding="4dip"
-        android:gravity="center_vertical"
-        android:background="#010409">
-
-        <EditText
-            android:id="@+id/edtSearch"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="12sp"
-            android:hint="Go to file..."/>
-
-        <Button
-            android:id="@+id/btnDownload"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="11sp"
-            android:text="ZIP"
-            android:background="@drawable/lime_button"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:padding="6dip"
-        android:gravity="center_vertical"
-        android:background="#161b22">
-
-        <ImageView
-            android:id="@+id/avatarCommit"
-            android:layout_width="16dip"
-            android:layout_height="16dip"
-            android:scaleType="centerCrop"/>
-
-        <TextView
-            android:id="@+id/txtUsernameCommit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="4dip"
-            android:textColor="#f0f6fc"
-            android:textSize="11sp"
-            android:textStyle="bold"
-            android:text="author"/>
-
-        <TextView
-            android:id="@+id/txtDescCommit"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="4dip"
-            android:singleLine="true"
-            android:ellipsize="end"
-            android:textColor="#8b949e"
-            android:textSize="11sp"
-            android:text="Commit message here..."/>
-    </LinearLayout>
-
-    <ListView
-        android:id="@+id/listTree"
-        android:layout_width="fill_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
-        android:divider="#21262d"
-        android:dividerHeight="1dp"
-        android:cacheColorHint="#00000000"/>
-
+    <!-- 1. MENU LATERAL (ESQUERDA) -->
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:padding="6dip"
-        android:background="#010409">
+        android:layout_width="120dp"
+        android:layout_height="fill_parent"
+        android:padding="8dp"
+        android:background="#181825">
 
-        <TextView
+        <Button
+            android:id="@+id/btnFeed"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textColor="#7d8590"
-            android:textSize="10sp"
+            android:layout_marginBottom="8dp"
+            android:text="Feed"
+            android:textColor="#000000"
             android:textStyle="bold"
-            android:text="ABOUT"/>
+            android:padding="8dp"/>
 
-        <TextView
-            android:id="@+id/txtDescription"
+        <Button
+            android:id="@+id/btnRepo"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textColor="#c9d1d9"
-            android:textSize="11sp"
-            android:text="Repository description goes here."/>
+            android:layout_marginBottom="8dp"
+            android:text="Repos"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:padding="8dp"/>
+
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:padding="8dp"/>
+    </LinearLayout>
+
+    <!-- 2. CONTEÚDO DA DIREITA (ÁREA PRINCIPAL QUE FALTAVA) -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:padding="4dip">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dip"
+            android:background="#010409">
+
+            <Button
+                android:id="@+id/btnCode"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="11sp"
+                android:text="Code"/>
+
+            <Button
+                android:id="@+id/btnIssues"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#000000"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:text="Issues"/>
+
+            <Button
+                android:id="@+id/btnPR"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#000000"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:text="PRs"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="6dip"
+            android:gravity="center_vertical"
+            android:background="#010409">
+
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="24dip"
+                android:layout_height="24dip"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:id="@+id/txtRepoName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="6dip"
+                android:textColor="#58a6ff"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:text="user / repository"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dip"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center_vertical"
+            android:background="#010409">
+
+            <EditText
+                android:id="@+id/edtSearch"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:textSize="12sp"
+                android:hint="Go to file..."/>
+
+            <Button
+                android:id="@+id/btnDownload"
+                android:layout_width="0dip"
+                android:layout_height="36dip"
+                android:layout_weight="1"
+                android:textColor="#f0f6fc"
+                android:textSize="11sp"
+                android:text="ZIP"
+                android:background="@drawable/lime_button"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="6dip"
+            android:gravity="center_vertical"
+            android:background="#161b22">
+
+            <ImageView
+                android:id="@+id/avatarCommit"
+                android:layout_width="16dip"
+                android:layout_height="16dip"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:id="@+id/txtUsernameCommit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="4dip"
+                android:textColor="#f0f6fc"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:text="author"/>
+
+            <TextView
+                android:id="@+id/txtDescCommit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="4dip"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:textColor="#8b949e"
+                android:textSize="11sp"
+                android:text="Commit message here..."/>
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/listTree"
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1"
+            android:divider="#21262d"
+            android:dividerHeight="1dp"
+            android:cacheColorHint="#00000000"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="6dip"
+            android:background="#010409">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#7d8590"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:text="ABOUT"/>
+
+            <TextView
+                android:id="@+id/txtDescription"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#c9d1d9"
+                android:textSize="11sp"
+                android:text="Repository description goes here."/>
+        </LinearLayout>
+
     </LinearLayout>
 
 </LinearLayout>

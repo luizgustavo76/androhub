@@ -6,6 +6,7 @@ import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.view.View;
 import java.util.ArrayList;
@@ -57,9 +58,37 @@ public class MainPage extends Activity {
         if (FeedCache.isValid(username)) {
             FeedAdapter adapter = new FeedAdapter(MainPage.this, FeedCache.cachedRepos);
             listFeed.setAdapter(adapter);
+            setupItemClickListener(FeedCache.cachedRepos);
         } else {
             new FetchFeedTask().execute();
         }
+    }
+
+    private void setupItemClickListener(final List<FeedItem> itemList) {
+        listFeed.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (itemList != null && position < itemList.size()) {
+                    FeedItem clickedRepo = itemList.get(position);
+                    
+                    String fullRepoName = clickedRepo.getRepoName();
+                    String targetUser = username;
+                    String repoOnly = fullRepoName;
+
+                    if (fullRepoName != null && fullRepoName.contains("/")) {
+                        String[] parts = fullRepoName.split("/");
+                        targetUser = parts[0];
+                        repoOnly = parts[1];
+                    }
+                    Intent intent = new Intent(MainPage.this, WorkTree.class);
+                    intent.putExtra("username", targetUser);
+                    intent.putExtra("repo_name", repoOnly); 
+                    intent.putExtra("token", token);
+                    intent.putExtra("path", "");
+                    startActivity(intent);
+                }
+            }
+        });
     }
 
     private class FetchFeedTask extends AsyncTask<Void, Void, List<FeedItem>> {
@@ -77,7 +106,6 @@ public class MainPage extends Activity {
         @Override
         protected List<FeedItem> doInBackground(Void... params) {
             List<FeedItem> itensFeed = new ArrayList<FeedItem>();
-
             try {
                 String urlFeed = "https://api.github.com/users/" + username + "/received_events/public";
                 String jsonResponse = request.requestHTTP(urlFeed, "GET", null, token);
@@ -171,6 +199,7 @@ public class MainPage extends Activity {
 
             FeedAdapter adapter = new FeedAdapter(MainPage.this, result);
             listFeed.setAdapter(adapter);
+            setupItemClickListener(result);
         }
     }
 }
