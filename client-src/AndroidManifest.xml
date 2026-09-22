@@ -31,6 +31,9 @@
         <activity 
             android:name=".WorkTree"
             android:label="Work tree" />
+        <activity 
+            android:name=".ViewFile"
+            android:label="View file" />
     </application>
 
 </manifest>

@@ -68,7 +68,6 @@ public class WorkTree extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 RepoItem itemClicked = (RepoItem) parent.getItemAtPosition(position);
                 
-                // Só navega recursivamente se for diretório
                 if ("dir".equals(itemClicked.type) || "tree".equals(itemClicked.type)) {
                     String newPath = path.equals("") ? itemClicked.name : path + "/" + itemClicked.name;
                     Intent intentTree = new Intent(WorkTree.this, WorkTree.class);
@@ -77,6 +76,10 @@ public class WorkTree extends Activity {
                     intentTree.putExtra("token", token);
                     intentTree.putExtra("path", newPath);
                     startActivity(intentTree);
+                }
+                if ("file".equals(itemClicked.type)){
+                    Intent intentFile = new Intent(WorkTree.this, ViewFile.class);
+                    startActivity(intentFile);
                 }
             }
         });
