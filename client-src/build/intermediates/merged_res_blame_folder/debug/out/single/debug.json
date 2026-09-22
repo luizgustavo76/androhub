@@ -1,30 +1,30 @@
 [
     {
-        "merged": "/home/luiz/.gradle/daemon/7.5/com.androhub-merged_res-5:/layout_enter.xml.flat",
-        "source": "/home/luiz/.gradle/daemon/7.5/com.androhub-client-src-6:/layout/enter.xml"
+        "merged": "com.androhub-merged_res-5:/layout_work_tree.xml.flat",
+        "source": "com.androhub-client-src-6:/layout/work_tree.xml"
     },
     {
-        "merged": "/home/luiz/.gradle/daemon/7.5/com.androhub-merged_res-5:/layout_main_page.xml.flat",
-        "source": "/home/luiz/.gradle/daemon/7.5/com.androhub-client-src-6:/layout/main_page.xml"
+        "merged": "com.androhub-merged_res-5:/layout_view_releases.xml.flat",
+        "source": "com.androhub-client-src-6:/layout/view_releases.xml"
     },
     {
-        "merged": "/home/luiz/.gradle/daemon/7.5/com.androhub-merged_res-5:/layout_view_file.xml.flat",
-        "source": "/home/luiz/.gradle/daemon/7.5/com.androhub-client-src-6:/layout/view_file.xml"
+        "merged": "com.androhub-merged_res-5:/layout_enter.xml.flat",
+        "source": "com.androhub-client-src-6:/layout/enter.xml"
     },
     {
-        "merged": "/home/luiz/.gradle/daemon/7.5/com.androhub-merged_res-5:/layout_item_feed.xml.flat",
-        "source": "/home/luiz/.gradle/daemon/7.5/com.androhub-client-src-6:/layout/item_feed.xml"
+        "merged": "com.androhub-merged_res-5:/layout_item_feed.xml.flat",
+        "source": "com.androhub-client-src-6:/layout/item_feed.xml"
     },
     {
-        "merged": "/home/luiz/.gradle/daemon/7.5/com.androhub-merged_res-5:/drawable_lime_button.xml.flat",
-        "source": "/home/luiz/.gradle/daemon/7.5/com.androhub-client-src-6:/drawable/lime_button.xml"
+        "merged": "com.androhub-merged_res-5:/drawable_lime_button.xml.flat",
+        "source": "com.androhub-client-src-6:/drawable/lime_button.xml"
+    },
+    {
+        "merged": "com.androhub-merged_res-5:/layout_main_page.xml.flat",
+        "source": "com.androhub-client-src-6:/layout/main_page.xml"
     },
     {
         "merged": "com.androhub-merged_res-5:/layout_view_file.xml.flat",
         "source": "com.androhub-client-src-6:/layout/view_file.xml"
-    },
-    {
-        "merged": "/home/luiz/.gradle/daemon/7.5/com.androhub-merged_res-5:/layout_work_tree.xml.flat",
-        "source": "/home/luiz/.gradle/daemon/7.5/com.androhub-client-src-6:/layout/work_tree.xml"
     }
 ]

@@ -43,7 +43,6 @@
             android:padding="8dp"/>
     </LinearLayout>
 
-    <!-- 2. CONTEÚDO DA DIREITA (ÁREA PRINCIPAL QUE FALTAVA) -->
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="0dip"
@@ -67,7 +66,15 @@
                 android:textColor="#000000"
                 android:textSize="11sp"
                 android:text="Code"/>
-
+            <Button
+                android:id="@+id/btnReleases"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="11sp"
+                android:text="Releases"/>
             <Button
                 android:id="@+id/btnIssues"
                 android:layout_width="0dip"

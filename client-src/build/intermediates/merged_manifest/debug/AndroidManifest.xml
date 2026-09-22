@@ -40,6 +40,9 @@
         <activity
             android:name="com.androhub.ViewFile"
             android:label="View file" />
+        <activity
+            android:name="com.androhub.ViewReleases"
+            android:label="View Releases" />
     </application>
 
 </manifest>

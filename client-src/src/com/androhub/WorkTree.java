@@ -11,7 +11,7 @@ import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
-
+import android.widget.Button;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,6 +24,9 @@ public class WorkTree extends Activity {
     private String token = "";
     private String path = "";
     private String url = "";
+    private Button btnReleases;
+    private Button btnPr;
+    private Button btnIssues;
     private ListView listView;
     private List<RepoItem> itemList = new ArrayList<RepoItem>();
 
@@ -41,7 +44,18 @@ public class WorkTree extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.work_tree);
-
+        btnReleases = (Button) findViewById(R.id.btnReleases);
+        btnPr = (Button) findViewById(R.id.btnPR);
+        btnIssues = (Button) findViewById(R.id.btnIssues);
+        btnReleases.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intentReleases = new Intent(WorkTree.this, ViewReleases.class);
+                intentReleases.putExtra("RepoName", username + "/" + repoName);
+                intentReleases.putExtra("token", token);
+                startActivity(intentReleases);
+            }
+        });
         listView = (ListView) findViewById(R.id.listTree);
         TextView txtRepoName = (TextView) findViewById(R.id.txtRepoName);
 

@@ -26,7 +26,7 @@
 17-->/home/luiz/androhub/client-src/AndroidManifest.xml:10:9-36
 18
 19    <application
-19-->/home/luiz/androhub/client-src/AndroidManifest.xml:15:5-37:19
+19-->/home/luiz/androhub/client-src/AndroidManifest.xml:15:5-40:19
 20        android:debuggable="true"
 21        android:label="AndroHub" >
 21-->/home/luiz/androhub/client-src/AndroidManifest.xml:15:18-42
@@ -71,6 +71,12 @@
 41-->/home/luiz/androhub/client-src/AndroidManifest.xml:35:13-37
 42            android:label="View file" />
 42-->/home/luiz/androhub/client-src/AndroidManifest.xml:36:13-38
-43    </application>
-44
-45</manifest>
+43        <activity
+43-->/home/luiz/androhub/client-src/AndroidManifest.xml:37:9-39:45
+44            android:name="com.androhub.ViewReleases"
+44-->/home/luiz/androhub/client-src/AndroidManifest.xml:38:13-41
+45            android:label="View Releases" />
+45-->/home/luiz/androhub/client-src/AndroidManifest.xml:39:13-42
+46    </application>
+47
+48</manifest>

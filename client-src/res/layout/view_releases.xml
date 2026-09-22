@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#0d1117">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="120dp"
+        android:layout_height="fill_parent"
+        android:padding="8dp"
+        android:background="#181825">
+
+        <Button
+            android:id="@+id/btnFeed"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Feed"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:padding="8dp"/>
+
+        <Button
+            android:id="@+id/btnRepo"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Repos"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:padding="8dp"/>
+
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:padding="8dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:padding="4dip">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dip"
+            android:background="#010409">
+
+            <Button
+                android:id="@+id/btnCode"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="11sp"
+                android:text="Code"/>
+
+            <Button
+                android:id="@+id/btnReleases"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="11sp"
+                android:text="Releases"/>
+
+            <Button
+                android:id="@+id/btnIssues"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#000000"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:text="Issues"/>
+
+            <Button
+                android:id="@+id/btnPR"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#000000"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:text="PRs"/>
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/listReleases"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:divider="#21262d"
+            android:dividerHeight="1px"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -34,6 +34,9 @@
         <activity 
             android:name=".ViewFile"
             android:label="View file" />
+        <activity 
+            android:name=".ViewReleases"
+            android:label="View Releases" />
     </application>
 
 </manifest>
